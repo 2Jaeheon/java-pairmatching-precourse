@@ -9,13 +9,15 @@ public class Pair {
         this.crewNames = crewNames;
     }
 
-    public boolean hasCommonCrew(Pair current) {
-        for (String name : current.crewNames) {
-            if (this.crewNames.contains(name)) {
-                return true;
+    public boolean isSamePair(Pair otherPair) {
+        int matchCount = 0; // 교집합 개수
+        for (String name : this.crewNames) {
+            if (otherPair.crewNames.contains(name)) {
+                matchCount++;
             }
         }
-        return false;
+
+        return matchCount >= 2;
     }
 
     public List<String> getCrewNames() {

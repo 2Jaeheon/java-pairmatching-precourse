@@ -54,10 +54,10 @@ public class PairManager {
                 List<Pair> pastPairs = entry.getValue();
 
                 // 3. 과거의 페어 목록과 현재 새로 만든 페어 목록을 이중 루프로 대조
-                for (Pair current : currentPairs) {
-                    for (Pair past : pastPairs) {
-                        // 4. Pair 객체의 메서드를 활용해 단 한 명이라도 겹치는지 확인
-                        if (past.hasCommonCrew(current)) {
+                for (Pair currentPair : currentPairs) {
+                    for (Pair pastPair : pastPairs) {
+                        // 4. Pair를 사용해서 같은 페어인지를 확인
+                        if (pastPair.isSamePair(currentPair)) {
                             return false;
                         }
                     }
